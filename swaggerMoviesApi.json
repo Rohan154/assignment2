@@ -1,0 +1,188 @@
+{
+    "swagger": "2.0",
+    "info":
+    {
+    "version": "1.0.0",
+    "description": "swagger REST API with CRUD",
+    "title": "movies API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths":
+    {
+    "/movies":
+    {
+    "get":
+    
+    {
+        "summary":"find a list of all movies",
+    "description": "fetching the movies details",
+   
+    "responses":
+    {
+    "200":
+    {
+    "description": "successfully Validated."
+    }
+    }
+    }
+    
+    },
+    "/movies/{movieid}":
+    {
+    "get":
+    {
+        "summary":"find a movie with movieId",
+    "description": "returns a single movie",
+    "operationId":"getMovieById",
+    
+        "parameters": [
+            {
+            "type": "integer",
+            "description": "id of movie to return",
+            "name": "movieid",
+            "in": "path"
+            
+            }
+            
+            
+            ],
+    "responses":
+    {
+    "200":
+    {
+    "description": "Successfully fetched the data"
+    }
+    }
+    }
+    
+    },
+    "/movies/add-movie":
+    {
+    "post":
+    {
+        "summary":"Add a new movie to the database",  
+  
+    
+   "parameters": [
+    
+    {
+        "type": "string",
+        "description": "name",
+        "name": "name",
+        "in": "json",
+        "example": "Zid"
+    },
+    {
+        "type": "integer",
+        "description": "year",
+        "year": "year",
+        "in": "json",
+        "example": "2019"
+    },
+    {
+        "type": "string",
+        "description": "rating",
+        "rating": "rating",
+        "in": "json",
+        "example": "2"
+    }
+               ],
+
+   
+   
+    "responses":
+    {
+    "200":
+    {
+    "description": "Successfully fetched the data"
+    }
+    }
+    }
+    
+    },
+    "/movies/update-movie{id}":
+    {
+    "put":
+    {
+        "summary":"update a existing movie to the database",  
+    "description": "",
+   
+    "parameters": [
+        {
+        "type":"string",
+        "description": "movie that needs to be added to the database",
+        "movieName": "name",
+        "in": "json"
+        
+        },
+        {
+        "type":"integer",
+        "description": "movie that needs to be added to the database",
+        "movieYear": "year",
+        "in": "json"
+        
+        },
+        {
+        "type":"integer",
+        "description": "movie that needs to be added to the database",
+        "movieRating": "rating",
+        "in": "json"
+        
+        },
+        {
+        "type":"integer",
+        "description": "movie that needs to be added to the database",
+        "id": "id",
+        "in": "json"
+        
+        }
+       
+        
+        
+        ],
+    
+    "responses":
+    {
+    "200":
+    {
+    "description": "Successfully updated the data"
+    }
+    }
+    }
+    
+    },
+    "/movies/delete-movie":
+    {
+    "delete":
+    {
+    "description": "This is to delete the record",
+    "operationId":"deleteMovie",
+    
+    "parameters": [
+        {
+        "type": "string",
+        "description": "id of movie to be deletd",
+        "name": "id",
+        "in": "header"
+        
+        }
+        
+        
+        ],
+    "responses":
+    {
+    "200":
+    {
+    "description": "Successfully deleted the data"
+    }
+    }
+    }
+    
+    
+}
+   
+    
+    }
+    }
